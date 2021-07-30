@@ -1,0 +1,57 @@
+<template>
+
+    <lightning-card title="ComboBox_Account_Name_Values">
+        <template if:true={accountOptionsList}>
+            <div class="slds-m-around_medium">
+            <lightning-combobox name="AccountName" label="Account Name" value={selectedAccount} placeholder="Select Account"
+                options={accountOptionsList} onchange={handleAccountChange}></lightning-combobox>
+
+            <p>Selected Account ID is: {selectedAccount}</p>
+        </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card>
+        <template if:true={ifAnyContactsFound}>
+            <lightning-datatable
+                key-field="Id"
+                data={contacts}
+                columns={columns}
+            >
+           </lightning-datatable>
+        </template>
+        <template if:false={ifAnyContactsFound}>
+            <p>No Data found!</p>
+        </template>
+    </lightning-card>
+
+</template>
+
+    <!-- <lightning-card title="ComboBox_Test_Values">
+            <lightning-combobox name="progress" label="Status" value={value} placeholder="Select Progress"
+                options={options} onchange={handleChange}></lightning-combobox>
+
+            <p>Selected value is: {value}</p>
+    </lightning-card>
+
+    <lightning-card title="ComboBox_Acc_Type_Values">
+        <template if:true={typeValues.data}>
+            <div class="slds-m-around_medium">
+            <lightning-combobox name="AccountType" label="Account Type" value={selectedAccountType} placeholder="Select Type"
+                options={typeValues.data.values} onchange={handleTypeChange}></lightning-combobox>
+
+            <p>Selected Acc Type is: {selectedAccountType}</p>
+        </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="ComboBox_Profile_Type_Values">
+        <template if:true={profileOptionsList}>
+            <div class="slds-m-around_medium">
+            <lightning-combobox name="ProfileType" label="Profile Type" value={selectedProfile} placeholder="Select Profile"
+                options={profileOptionsList} onchange={handleProfileChange}></lightning-combobox>
+
+            <p>Selected Profile ID is: {selectedProfile}</p>
+        </div>
+        </template>
+    </lightning-card> -->
